@@ -7,16 +7,23 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+    <style>
+        .centered   {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="jumbotron">
-        <h1>Star Wars Express</h1>
-        <h3>The greatest resource in the galaxy for Star Wars statistics!</h3>
+    <div style="background-color: rebeccapurple; color: white;" class="jumbotron centered">
+        <h1><span class="glyphicon glyphicon-fire" ></span>  Hot Restaurant</h1>
         <hr>
-        <a href="/"><button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-eye-open"></span> View Characters</button></a>
+        <h3>Book your seat before they are all gone!</h3>
+
+        <a href="/add"><button type="button" class="btn btn-primary btn-lg pad1"><span class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
+        <a href="/add"><button type="button" class="btn btn-lg pad2"><span class="glyphicon glyphicon-home btn-default"></span></button></a>
+
     </div>
     <div class="row">
 
@@ -35,18 +42,18 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="role">Role</label>
-                            <input type="text" class="form-control" id="role">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input type="text" class="form-control" id="phoneNumber">
                         </div>
 
                         <div class="form-group">
-                            <label for="age">Age</label>
-                            <input type="text" class="form-control" id="age">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email">
                         </div>
 
                         <div class="form-group">
-                            <label for="force-points">Force Points</label>
-                            <input type="text" class="form-control" id="force-points">
+                            <label for="uniqueId">Unique ID</label>
+                            <input type="text" class="form-control" id="uniqueId">
                         </div>
 
                     </form>
@@ -58,6 +65,18 @@
             </div>
 
         </div>
+    </div>
+    <div class="footer botm">
+
+        <a href="#">Clear Table  </a>
+
+        |
+
+        <a href="#">  API Table Link  </a>
+        |
+        <a href="#">  API Wait List  </a>
+
+
     </div>
 </div>
 
