@@ -1,0 +1,26 @@
+{
+  "name": "hotresty",
+  "version": "1.0.0",
+  "description": "restaurants that serve hot food",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zenlionel/hotresty.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zenlionel/hotresty/issues"
+  },
+  "homepage": "https://github.com/zenlionel/hotresty#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mysql": "^2.15.0",
+    "path": "^0.12.7"
+  }
+}
