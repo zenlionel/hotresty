@@ -27,8 +27,8 @@
         <hr>
         <h3>Book your seat before they are all gone!</h3>
 
-        <a href="/reserve"><button type="button" class="btn btn-danger btn-lg pad2"><span class="glyphicon glyphicon-credit-card"></span> Make Reservation</button></a>
-        <a href="/"><button type="button" class="btn btn-lg pad1"><span class="glyphicon glyphicon-home btn-default"></span></button></a>
+        <a href="reserve.html"><button type="button" class="btn btn-danger btn-lg pad2"><span class="glyphicon glyphicon-credit-card"></span> Make Reservation</button></a>
+        <a href="home.html"><button type="button" class="btn btn-lg pad1"><span class="glyphicon glyphicon-home btn-default"></span></button></a>
 
 
     </div>
@@ -68,6 +68,7 @@
                 </div>
                 <div class="panel-body">
                     <div class="well">
+                            <div id="table-search"></div>
                         <div class="col-12 pol">
                             <h1> <span class="label label-primary"></span> </h1> <h1>    </h1>
                         </div>
@@ -85,11 +86,11 @@
     </div>
 <div class="footer botm">
 
-        <a href="#">Clear Table  </a>
+        <a href="#"> Clear Table  </a>
 
           |
 
-        <a href="#">  API Table Link  </a>
+        <a href="reserve.html">  API Table Link  </a>
           |
         <a href="#">  API Wait List  </a>
 
@@ -98,23 +99,22 @@
 </div>
 
 <script type="text/javascript">
-    $("#search-btn").on("click", function() {
-        var searchedCharacter = $("#character-search").val().trim();
+    $(".pad1").load("click", function() {
+        // var searchedTables = $("#table-search").val().trim();
 
-        searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
+        // searchedTables = searchedTables.replace(/\s+/g, "").toLowerCase();
 
-        $.get("/api/" + searchedCharacter, function(data) {
+        $.get("/api/tables" + searchedTables, function(data) {
             console.log(data);
             if (data) {
-                $("#stats").show();
                 $("#name").text(data.name);
-                $("#role").text(data.role);
-                $("#age").text(data.age);
-                $("#force-points").text(data.forcePoints);
+                $("#phoneNumber").text(data.phoneNumber);
+                $("#email").text(data.email);
+                $("#uniqueId").text(data.uniqueId);
             }
             else {
-                $("#name").text("The force is not strong with this one. Your character was not found.");
-                $("#stats").hide();
+                $("#name").text("All times available.");
+               
             }
         });
     });
