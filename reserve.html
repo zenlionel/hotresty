@@ -11,6 +11,9 @@
         .centered   {
             text-align: center;
         }
+        .botm   {
+            padding-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -21,8 +24,8 @@
         <hr>
         <h3>Book your seat before they are all gone!</h3>
 
-        <a href="/tables"><button type="button" class="btn btn-primary btn-lg pad1"><span class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
-        <a href="/"><button type="button" class="btn btn-lg pad2"><span class="glyphicon glyphicon-home btn-default"></span></button></a>
+        <a href="tables.html"><button type="button" class="btn btn-primary btn-lg pad1"><span class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
+        <a href="home.html"><button type="button" class="btn btn-lg pad2"><span class="glyphicon glyphicon-home btn-default"></span></button></a>
 
     </div>
     <div class="row">
@@ -31,7 +34,7 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><strong>Add Characters</strong></h3>
+                    <h3 class="panel-title"><strong> Table Reservation</strong></h3>
                 </div>
                 <div class="panel-body">
                     <form method="POST" role="form">
@@ -59,7 +62,7 @@
                     </form>
                     <br>
                     <div class="text-right">
-                        <button type="submit" class="btn btn-primary btn-md" id="add-btn"><span class="glyphicon glyphicon-fire"></span> Add to the Force</button>
+                        <button type="submit" class="btn btn-primary btn-md pull-left" id="add-btn"><span class="glyphicon glyphicon-fire"></span> Reserve Table </button>
                     </div>
                 </div>
             </div>
@@ -72,32 +75,32 @@
 
         |
 
-        <a href="#">  API Table Link  </a>
+        <a href="reserve.html">  API Table Link  </a>
         |
-        <a href="#">  API Wait List  </a>
+        <a href="tables.html">  API Wait List  </a>
 
 
     </div>
 </div>
 
 <script type="text/javascript">
-    // Question: What does this code do?
-    $("#add-btn").on("click", function(event) {
-        event.preventDefault();
-        var newCharacter = {
-            name: $("#name").val().trim(),
-            role: $("#role").val().trim(),
-            age: $("#age").val().trim(),
-            forcePoints: $("#force-points").val().trim()
-        };
+        // Question: What does this code do?
+        $("#add-btn").on("click", function(event) {
+            event.preventDefault();
+            var newTable = {
+                name: $("#name").val().trim(),
+                phonenumber: $("#phonenumber").val().trim(),
+                email: $("#email").val().trim(),
+                uniqueId: $("#uniqueid").val().trim()
+            };
 
-        // Question: What does this code do??
-        $.post("/api/new", newCharacter)
-            .done(function(data) {
-                console.log(data);
-                alert("Adding character...");
-            });
-    });
+            // Question: What does this code do??
+            $.post("/api/new", newTable)
+                .done(function(data) {
+                    console.log(data);
+                    alert("Adding table");
+                });
+        });
 </script>
 
 </body>
