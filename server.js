@@ -36,6 +36,10 @@ app.get("/tables", function(req, res) {
   res.sendFile(path.join(__dirname, "tables.html"));
 });
 
+app.get("/searchedTables", function(req,res){
+  res.send(tables);
+});
+
 // Search for Specific Character (or all characters) - provides JSON
 app.get("/api/tables", function(req, res) {
     res.json(tables);
@@ -73,7 +77,10 @@ app.post("/reserve", function(req, res) {
   }
 });
 
-app.delete("/")
+app.delete("/", function(req,res){
+  tables = [];
+  waitList = [];
+})
 
 // Starts the server to begin listening
 // =============================================================
