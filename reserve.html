@@ -84,23 +84,23 @@
 </div>
 
 <script type="text/javascript">
-        // Question: What does this code do?
-        $("#add-btn").on("click", function(event) {
-            event.preventDefault();
-            var newTable = {
-                name: $("#name").val().trim(),
-                phonenumber: $("#phonenumber").val().trim(),
-                email: $("#email").val().trim(),
-                uniqueId: $("#uniqueid").val().trim()
-            };
+    // Question: What does this code do?
+    $("#add-btn").on("click", function(event) {
+        event.preventDefault();
+        var newTable = {
+            name: $("#name").val().trim(),
+            phoneNumber: $("#phoneNumber").val().trim(),
+            email: $("#email").val().trim(),
+            uniqueId: $("#uniqueId").val().trim()
+        };
 
-            // Question: What does this code do??
-            $.post("/api/new", newTable)
-                .done(function(data) {
-                    console.log(data);
-                    alert("Adding table");
-                });
-        });
+        // Question: What does this code do??
+        $.post("/reserve", newTable)
+            .done(function(data) {
+                console.log(data);
+                alert("Adding table...");
+            });
+    });
 </script>
 
 </body>

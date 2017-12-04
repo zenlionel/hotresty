@@ -68,6 +68,7 @@
                 </div>
                 <div class="panel-body">
                     <div class="well">
+                            <div id="table-search"></div>
                         <div class="col-12 pol">
                             <h1> <span class="label label-primary"></span> </h1> <h1>    </h1>
                         </div>
@@ -98,23 +99,22 @@
 </div>
 
 <script type="text/javascript">
-    $("#search-btn").on("click", function() {
-        var searchedCharacter = $("#character-search").val().trim();
+    $(".pad1").load("click", function() {
+        // var searchedTables = $("#table-search").val().trim();
 
-        searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
+        // searchedTables = searchedTables.replace(/\s+/g, "").toLowerCase();
 
-        $.get("/api/" + searchedCharacter, function(data) {
+        $.get("/api/tables" + searchedTables, function(data) {
             console.log(data);
             if (data) {
-                $("#stats").show();
                 $("#name").text(data.name);
-                $("#role").text(data.role);
-                $("#age").text(data.age);
-                $("#force-points").text(data.forcePoints);
+                $("#phoneNumber").text(data.phoneNumber);
+                $("#email").text(data.email);
+                $("#uniqueId").text(data.uniqueId);
             }
             else {
-                $("#name").text("The force is not strong with this one. Your character was not found.");
-                $("#stats").hide();
+                $("#name").text("All times available.");
+               
             }
         });
     });
